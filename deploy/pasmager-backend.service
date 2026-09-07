@@ -1,0 +1,20 @@
+[Unit]
+Description=PasMager Backend (Express API)
+After=network.target postgresql.service tailscaled.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+User=haekalriz
+WorkingDirectory=/home/haekalriz/Project/Password-Manager/backend
+EnvironmentFile=/home/haekalriz/Project/Password-Manager/backend/.env
+ExecStart=/home/haekalriz/.nvm/versions/node/v24.18.0/bin/node server.js
+Restart=on-failure
+RestartSec=5
+
+# Hardening (safe defaults for a single-user personal service)
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,125 @@
+# ==============================================================
+#  PasMager — .gitignore
+#  Aturan utama: RAHASIA & DATA PRIBADI TIDAK PERNAH MASUK REPO.
+# ==============================================================
+
+# --------------------------------------------------------------
+# 1. SECRETS & KREDENSIAL  ← paling kritis, jangan pernah dihapus
+# --------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.env
+
+# Kunci, sertifikat, credential file
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+*.jks
+id_rsa
+id_rsa.*
+credentials.json
+serviceAccount*.json
+secrets.json
+secrets.yml
+secrets.yaml
+
+# --------------------------------------------------------------
+# 2. DATA PRIBADI / DOKUMEN INTERNAL
+#    File berisi catatan keuangan & dokumen pribadi — bukan kode.
+# --------------------------------------------------------------
+claude-history.md
+dokumentasi-fitur-tes-kepribadian.pdf
+*.local.md
+/private/
+/notes/
+
+# --------------------------------------------------------------
+# 3. DATABASE — dump & backup bisa berisi vault user
+#    (schema.sql sengaja TIDAK diabaikan, itu bagian dari kode)
+# --------------------------------------------------------------
+*.dump
+*.sqlite
+*.sqlite3
+*.db
+*backup*.sql
+*dump*.sql
+/pgdata/
+
+# --------------------------------------------------------------
+# 4. DEPENDENCIES
+# --------------------------------------------------------------
+node_modules/
+.pnp
+.pnp.js
+jspm_packages/
+
+# --------------------------------------------------------------
+# 5. BUILD OUTPUT
+# --------------------------------------------------------------
+dist/
+dist-ssr/
+build/
+out/
+.vite/
+*.local
+
+# --------------------------------------------------------------
+# 6. LOGS & DEBUG
+# --------------------------------------------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+report.[0-9]*.json
+
+# --------------------------------------------------------------
+# 7. TEST & COVERAGE
+# --------------------------------------------------------------
+coverage/
+.nyc_output/
+*.lcov
+
+# --------------------------------------------------------------
+# 8. CACHE & TEMP
+# --------------------------------------------------------------
+.cache/
+.temp/
+.tmp/
+tmp/
+.eslintcache
+.parcel-cache/
+*.tsbuildinfo
+
+# --------------------------------------------------------------
+# 9. PLATFORM DEPLOY
+# --------------------------------------------------------------
+.vercel/
+.netlify/
+.railway/
+.render/
+
+# --------------------------------------------------------------
+# 10. EDITOR & OS
+# --------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini

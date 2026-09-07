@@ -1,0 +1,17 @@
+[Unit]
+Description=PasMager Frontend (static build server)
+After=network.target
+
+[Service]
+Type=simple
+User=haekalriz
+WorkingDirectory=/home/haekalriz/Project/Password-Manager/frontend
+ExecStart=/home/haekalriz/.nvm/versions/node/v24.18.0/bin/node node_modules/.bin/serve -s dist -l 4173
+Restart=on-failure
+RestartSec=5
+
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
